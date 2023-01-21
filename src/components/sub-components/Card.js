@@ -1,7 +1,11 @@
 export default function CarouselCard({card}) {
     return(
         <div className="card">
-            <div className="card-image"></div>
+            {card.img ? 
+                <img className="card-image" src={card.img}/>
+                : 
+                null
+            }
             <div className="card-body">
                 <div className="card-header">
                     <h3>{card.title}</h3>

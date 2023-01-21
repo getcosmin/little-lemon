@@ -1,35 +1,34 @@
 import { useEffect } from "react"
+import HeroLarge from '../components/HeroLarge'
+import Booking from "../components/Booking"
 
 export default function BookingPage() {
 
     return(
-        <section>
-            <div className="wrapper">
-                <h1>Booking Page</h1>
+        <>
+            <HeroLarge content = {{ 
+                title: 'Reservation',
+                text: 'Book your table now at Litle Lemon restaurant.',     
+            }}/>
 
-                <form className="booking-form">
-                    <div>
-                        <label for="res-date">Choose date</label>
-                        <input type="date" id="res-date"/>
+            <section>
+                <div className="wrapper">
+                    <div className="headline">
+                        <h2>How to reach us</h2>
                     </div>
+                </div>
+                <div className="booking-module wrapper">
                     <div>
-                        <label for="res-time">Choose time</label>
-                        <select id="res-time">
-                            <option>17:00</option>
-                            <option>18:00</option>
-                            <option>19:00</option>
-                            <option>20:00</option>
-                            <option>21:00</option>
-                            <option>22:00</option>
-                        </select>
-                    </div>
+                        <h3>Our location</h3>
+                    </div>  
                     <div>
-                        <label for="guests">Number of guests</label>
-                        <input type="number" placeholder="1" min="1" max="10" id="guests"/>
+                        <h3>Book your table from here!</h3>
+                        <Booking />
                     </div>
-                    <button type="Submit">Submit</button>
-                </form>
-            </div>
-        </section>
+                </div>
+            </section>
+            
+        
+        </>
     )
 }

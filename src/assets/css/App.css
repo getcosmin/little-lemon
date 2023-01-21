@@ -28,12 +28,12 @@
 
 
     --color-accent: rgb(230, 64, 64);
+    --color-accent-yellow: rgb(255, 163, 0);
 
     --title-h1: clamp(4rem,4rem + 1vw,9.6rem);
     --title-h2: clamp(2rem,2rem + 1vw,3.2rem);
-    --title-h3: clamp(1.6rem, 1.6rem + 0.2vw,2rem);
-    --text-mark: clamp(2rem,1rem + 2vw,3.2rem);
-    --title-h4: clamp(2.0rem,1rem + 1vw,4.0rem);
+    --title-h3: clamp(1.6rem, 1.6rem + 0.2vw, 2.8rem);
+    --title-h4: clamp(2.0rem,1rem + 1vw, 2.4rem);
     --title-h5: clamp(1.6rem,1rem + 1vw,2.4em);
     --title-h6: clamp(1.4rem,1rem + 1vw,1.8rem);
     --title-line-height: 1;
@@ -52,29 +52,6 @@
     
     --radius-small: 0.4rem;
 }
-[data-theme='light'] {
-    --color-background-40: rgb(255, 255, 255, 0.4);
-    --color-background-60: #2f353d;
-    --color-primary-900: #ffffff;
-    --color-primary-800: #f2f5f7;
-    --color-primary-700: #c8cbce;
-    --color-primary-600: #778089;
-    --color-primary-500: #5e6977;
-    --color-primary-400: #434d5a;
-    --color-primary-300: #2f353d;
-    --color-primary-200: #171a1e;
-    --color-primary-100: #0d0f12;
-    --color-primary-050: #f2f5f7;
-
-}
-[data-active='false'] {
-    fill: transparent;
-    stroke: var(--color-primary-300);
-}
-[data-active='true'] {
-    stroke: none;
-    fill: var(--color-primary-300);
-}
 .button-icon {
     fill: var(--color-primary-300);
 }
@@ -82,7 +59,7 @@
     background-color: var(--color-primary-900);
 }
 html {
-    font-family: 'Montserrat';
+    font-family: 'Poppins';
     font-size: 62.5%;
 }
 body {
@@ -104,22 +81,54 @@ h3 {
     margin-block: 0;
     font-size: var(--title-h3);
 }
+h4 {
+    color: var(--color-primary-900);
+    font-size: var(--title-h4);
+}
 span {
     font-size: 1.4rem;
 }
-p {
+p, a, span, li {
     line-height: var(--text-line-height);
     font-size: 1.6rem;
 }
-span, p, .card-genres, .footer-list-item {
+label {
+    line-height: 2.4;
+    font-size: var(--text-small);
+}
+input {
+    height: 2.4rem;
+    padding: 0.8rem;
+}
+select {
+    padding: 0.8rem;
+    height: 4.4rem;
+}
+input, select {
+   width: 200px;
+}
+
+span, p, .card-genres, .footer-list-item, a {
     color: var(--color-primary-900);
 }
+
 h2, h1 {
     color: var(--color-primary-900);
 }
 button {
     background: transparent;
     border: none;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: var(--color-accent);
+}
+.button-text {
+    font-size: var(--text-small);
+    color: var(--color-primary-000);
+    text-decoration: none;
 }
 .line {
     display: flex;
@@ -149,7 +158,7 @@ button {
 .button-primary {
     height: min-content;
     border-radius: var(--radius-small);
-    margin: var(--spacing-02) 0 var(--spacing-04) 0;
+    margin: var(--spacing-02) 0 var(--spacing-02) 0;
     padding: 1.2rem 2.4rem;
     display: block;
     width: fit-content;
@@ -166,6 +175,11 @@ button {
 .fill-available {
     width: -webkit-fill-available;
 }
+.headline {
+    margin-block: var(--spacing-08) var(--spacing-06);
+    width: 100%;
+    text-align: center;
+}
 
 /* -------------------- 
 NAVIGATION CSS
@@ -174,42 +188,110 @@ NAVIGATION CSS
 .navigation-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+.navigation-menu  {
+    gap: 3.2rem;
 }
 .navigation-brand {
     margin-right: var(--spacing-04);
 }
-
+.navigation-menu > li {
+    text-transform: uppercase;
+}
 /* -------------------- 
-TESTIMONIALS CSS
+FOOTER CSS
 -------------------- */
-.testimonials {
+.footer {
     background-color: var(--color-primary-050);
     min-height: 50vh;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
-.testimonials-title {
+.footer-nav > li {
+    margin-block: 0.4rem;
+}
+.footer-body  {
+    display: grid;
+    gap: var(--spacing-08);
+}
+.footer-social {
+    display: flex;
+    gap: var(--spacing-04);
+    padding-bottom: var(--spacing-04);
+    border-bottom: 1px solid var(--color-primary-100);
+}
+.footer-navigation {
+    display: flex;
+    gap: var(--spacing-08);
+}
+
+
+/* -------------------- 
+review CSS
+-------------------- */
+.review {
+    background-color: var(--color-primary-050);
+    min-height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.card-review {
+    background-color: var(--color-primary-000);
+    padding: var(--spacing-02);
+    border-radius: var(--radius-small);
+}
+.review-cards-frame {
+    margin-block: var(--spacing-06);
+    flex-wrap: wrap;
+    display: flex;
+    gap: var(--spacing-02);
+}
+.review-title {
     margin-block: 0;
 }
-.testimonials-header {
+.review-header {
     text-align: center;
 }
-.testimonials-subtitle {
+.review-subtitle {
     font-size: var(--text-large);
+    color: var(--color-primary-600);
     margin-block: 0.4rem 2.4rem;
+}
+.review-star {
+    fill: var(--color-accent-yellow);
+    height: 2.4rem;
+    width: auto;
+}
+.review-rating {
+    display: flex;
+    gap: var(--spacing-01);
+    margin-block: 0 var(--spacing-01);
+    align-items: center;
+}
+.review-score {
+    margin-top: 0.4rem;
+}
+.review-text {
+    color: var(--color-primary-600);
+    font-style: italic;
 }
 
 /* -------------------- 
 HERO CSS
 -------------------- */
-.hero {
-    background-color: var(--color-primary-050);
+.hero, .display {
     min-height: 60vh;
     display: flex;
     align-items: center;
 }
+.hero {
+    background-color: var(--color-primary-050);
+}
 .hero-container {
+    align-items: center;
     display: flex;
 }
 .hero-body {
@@ -228,6 +310,7 @@ FEATURED CSS
 }
 
 .featured-call-to-action {
+    margin-block: var(--spacing-04);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -236,14 +319,21 @@ FEATURED CSS
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-04);
+    margin-block: 0 var(--spacing-08);
 }
 .card {
     border: 1px solid var(--color-primary-200);
     border-radius: 4px;
+}
+.card-body {
     padding: var(--spacing-02);
 }
+.card-image {
+    height: 256px;
+    width: 100%;
+}
 .card-header {
-    margin-block: 1.2rem 2.4rem;
+    margin-block: 0 1.2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -255,8 +345,12 @@ FEATURED CSS
 /* -------------------- 
 Booking FORM CSS
 -------------------- */
-
+.reservation {
+    min-height: 50vh;
+    margin-block: var(--spacing-06);
+}
 .booking-form {
+    margin-block: var(--spacing-04);
     display: grid;
     max-width: 200px;
     gap: var(--spacing-04);
@@ -267,9 +361,18 @@ DESKTOP CSS
 -------------------- */
 
 @media (min-width: 1024px) {
+    .booking-module {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .review-cards-frame {
+        display: grid;
+        gap: var(--spacing-06);
+        grid-template-columns: repeat(3, 1fr);
+    }
     .wrapper {
         margin: auto;
-        max-width: min(1440px, 80vw);
+        max-width: min(1240px, 80vw);
     }
     .hero-container {
         display: grid;
