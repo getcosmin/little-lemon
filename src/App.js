@@ -1,11 +1,17 @@
-import './App.css';
+import '../src/assets/css/App.css'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './views/HomePage';
+import BookingPage from './views/BookingPage';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
     <>
-      <main>
-        <h1>Little Lemon</h1>
-      </main>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/booking" element={<BookingPage />}></Route>
+      </Routes>
     </>
   );
 }

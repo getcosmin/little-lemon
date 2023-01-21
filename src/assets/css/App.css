@@ -1,0 +1,282 @@
+:root {
+    --spacing-01: 0.8rem;
+    --spacing-02: 1.6rem;
+    --spacing-03: 2.4rem;
+    --spacing-04: 3.2rem;
+    --spacing-05: 4.0rem;
+    --spacing-06: 4.8rem;
+    --spacing-07: 5.6rem;
+    --spacing-08: 6.4rem;
+
+    --color-text: #e3e5e8;
+    --color-background-40: rgb(13, 15, 18, 0.4);
+    --color-background-60: #2f353d;
+    --color-side: rgba(255, 255, 255, 0.1);
+    --color-primary-900: #0d0f12;
+    --color-primary-800: #171a1e;
+    --color-primary-700: #2f353d;
+    --color-primary-600: #434d5a;
+    --color-primary-500: #5e6977;
+    --color-primary-400: #778089;
+    --color-primary-300: #9399a1;
+    --color-primary-200: #c8cbce;
+    --color-primary-100: #e3e5e8;
+    --color-primary-050: #f2f5f7;
+    --color-primary-000: #ffffff;
+
+    --color-primary-900-60: rgb(13 15 18 / 60%);
+
+
+    --color-accent: rgb(230, 64, 64);
+
+    --title-h1: clamp(4rem,4rem + 1vw,9.6rem);
+    --title-h2: clamp(2rem,2rem + 1vw,3.2rem);
+    --title-h3: clamp(1.6rem, 1.6rem + 0.2vw,2rem);
+    --text-mark: clamp(2rem,1rem + 2vw,3.2rem);
+    --title-h4: clamp(2.0rem,1rem + 1vw,4.0rem);
+    --title-h5: clamp(1.6rem,1rem + 1vw,2.4em);
+    --title-h6: clamp(1.4rem,1rem + 1vw,1.8rem);
+    --title-line-height: 1;
+    --text-line-height: 1.5;
+    --text-small: 1.4rem;
+    --text-normal: 1.6rem;
+    --text-large: 1.8rem;
+    --pill-padding: 0.8rem 1.6rem;
+
+    --movie-brand-logo: clamp(3.2rem, 5rem + 4vw ,14rem);;
+
+    --icon-size-small: 2.4rem;
+    --icon-size-medium: 3.2rem;
+    --icon-size-large: 4.0rem;
+    --icon-size-huge: 4.8rem;
+    
+    --radius-small: 0.4rem;
+}
+[data-theme='light'] {
+    --color-background-40: rgb(255, 255, 255, 0.4);
+    --color-background-60: #2f353d;
+    --color-primary-900: #ffffff;
+    --color-primary-800: #f2f5f7;
+    --color-primary-700: #c8cbce;
+    --color-primary-600: #778089;
+    --color-primary-500: #5e6977;
+    --color-primary-400: #434d5a;
+    --color-primary-300: #2f353d;
+    --color-primary-200: #171a1e;
+    --color-primary-100: #0d0f12;
+    --color-primary-050: #f2f5f7;
+
+}
+[data-active='false'] {
+    fill: transparent;
+    stroke: var(--color-primary-300);
+}
+[data-active='true'] {
+    stroke: none;
+    fill: var(--color-primary-300);
+}
+.button-icon {
+    fill: var(--color-primary-300);
+}
+.background {
+    background-color: var(--color-primary-900);
+}
+html {
+    font-family: 'Montserrat';
+    font-size: 62.5%;
+}
+body {
+    margin: 0;
+}
+.wrapper {
+    margin: 0 var(--spacing-02);
+}
+h1 {
+    margin-block-end: 0;
+    font-size: var(--title-h1);
+    line-height: 1;
+}
+h2 {
+    font-size: var(--title-h2);
+}
+h3 {
+    color: var(--color-primary-900);
+    margin-block: 0;
+    font-size: var(--title-h3);
+}
+span {
+    font-size: 1.4rem;
+}
+p {
+    line-height: var(--text-line-height);
+    font-size: 1.6rem;
+}
+span, p, .card-genres, .footer-list-item {
+    color: var(--color-primary-900);
+}
+h2, h1 {
+    color: var(--color-primary-900);
+}
+button {
+    background: transparent;
+    border: none;
+}
+.line {
+    display: flex;
+    align-items: center;
+    padding-left: var(--spacing-02);
+}
+.line::before {
+    content: '';
+    border-left: 0.4rem solid var(--color-accent);
+    height: 3.2rem;
+    position: absolute;
+    margin-left: calc(-1 * var(--spacing-02));
+}
+.flex { 
+    display: flex;
+}
+.gap01 {
+    gap: var(--spacing-01);
+}
+.list-none {
+    list-style-type: none;
+    padding-inline: 0;
+}
+.hide-menu {
+    display: none;
+}
+.button-primary {
+    height: min-content;
+    border-radius: var(--radius-small);
+    margin: var(--spacing-02) 0 var(--spacing-04) 0;
+    padding: 1.2rem 2.4rem;
+    display: block;
+    width: fit-content;
+    --color-primary-900: #0d0f12;
+    cursor: pointer;
+    color: var(--color-primary-000);
+    transition: 100ms;
+    background-color: var(--color-primary-900);
+}
+.button-primary:hover {
+    color: var(--color-primary-000);
+    background-color: var(--color-accent);
+}
+.fill-available {
+    width: -webkit-fill-available;
+}
+
+/* -------------------- 
+NAVIGATION CSS
+-------------------- */
+
+.navigation-container {
+    display: flex;
+    align-items: center;
+}
+.navigation-brand {
+    margin-right: var(--spacing-04);
+}
+
+/* -------------------- 
+TESTIMONIALS CSS
+-------------------- */
+.testimonials {
+    background-color: var(--color-primary-050);
+    min-height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.testimonials-title {
+    margin-block: 0;
+}
+.testimonials-header {
+    text-align: center;
+}
+.testimonials-subtitle {
+    font-size: var(--text-large);
+    margin-block: 0.4rem 2.4rem;
+}
+
+/* -------------------- 
+HERO CSS
+-------------------- */
+.hero {
+    background-color: var(--color-primary-050);
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+.hero-container {
+    display: flex;
+}
+.hero-body {
+    text-align: center;
+    width: 100%;
+}
+
+/* -------------------- 
+FEATURED CSS
+-------------------- */
+.featured {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.featured-call-to-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.featured-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-04);
+}
+.card {
+    border: 1px solid var(--color-primary-200);
+    border-radius: 4px;
+    padding: var(--spacing-02);
+}
+.card-header {
+    margin-block: 1.2rem 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-price {
+    font-size: var(--text-normal);
+}
+
+/* -------------------- 
+Booking FORM CSS
+-------------------- */
+
+.booking-form {
+    display: grid;
+    max-width: 200px;
+    gap: var(--spacing-04);
+}
+
+/* -------------------- 
+DESKTOP CSS
+-------------------- */
+
+@media (min-width: 1024px) {
+    .wrapper {
+        margin: auto;
+        max-width: min(1440px, 80vw);
+    }
+    .hero-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-body {
+        text-align: left;
+        width: 100%;
+    }
+}
