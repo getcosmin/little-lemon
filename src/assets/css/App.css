@@ -9,25 +9,17 @@
     --spacing-08: 6.4rem;
 
     --color-text: #e3e5e8;
-    --color-background-40: rgb(13, 15, 18, 0.4);
-    --color-background-60: #2f353d;
-    --color-side: rgba(255, 255, 255, 0.1);
-    --color-primary-900: #0d0f12;
-    --color-primary-800: #171a1e;
-    --color-primary-700: #2f353d;
-    --color-primary-600: #434d5a;
-    --color-primary-500: #5e6977;
-    --color-primary-400: #778089;
-    --color-primary-300: #9399a1;
+    --color-primary-900: #272727;
+    --color-primary-600: #646464;
     --color-primary-200: #c8cbce;
-    --color-primary-100: #e3e5e8;
-    --color-primary-050: #f2f5f7;
+    --color-primary-050: rgb(242 247 245);
     --color-primary-000: #ffffff;
 
     --color-primary-900-60: rgb(13 15 18 / 60%);
 
 
-    --color-accent: rgb(230, 64, 64);
+    --color-accent-900: rgb(30 190 114);
+    --color-accent-800: rgb(64, 204, 129);
     --color-accent-yellow: rgb(255, 163, 0);
 
     --title-h1: clamp(4rem,4rem + 1vw,9.6rem);
@@ -79,7 +71,7 @@ h2 {
 }
 h3 {
     color: var(--color-primary-900);
-    margin-block: 0;
+    margin-block: var(--spacing-02);
     font-size: var(--title-h3);
 }
 h4 {
@@ -109,8 +101,8 @@ input, select {
    width: 200px;
 }
 
-span, p, .card-genres, .footer-list-item, a {
-    color: var(--color-primary-900);
+span, p, .card-genres, .footer-list-item, a, li {
+    color: var(--color-primary-600);
 }
 
 h2, h1 {
@@ -124,7 +116,7 @@ a {
     text-decoration: none;
 }
 a:hover {
-    color: var(--color-accent);
+    color: var(--color-accent-900);
 }
 .button-text {
     font-size: var(--text-small);
@@ -138,7 +130,7 @@ a:hover {
 }
 .line::before {
     content: '';
-    border-left: 0.4rem solid var(--color-accent);
+    border-left: 0.4rem solid var(--color-accent-900);
     height: 3.2rem;
     position: absolute;
     margin-left: calc(-1 * var(--spacing-02));
@@ -163,15 +155,14 @@ a:hover {
     padding: 1.2rem 2.4rem;
     display: block;
     width: fit-content;
-    --color-primary-900: #0d0f12;
     cursor: pointer;
     color: var(--color-primary-000);
     transition: 100ms;
-    background-color: var(--color-primary-900);
+    background-color: var(--color-accent-900);
 }
 .button-primary:hover {
     color: var(--color-primary-000);
-    background-color: var(--color-accent);
+    background-color: var(--color-accent-800);
 }
 .fill-available {
     width: -webkit-fill-available;
@@ -401,6 +392,9 @@ DESKTOP CSS
 -------------------- */
 
 @media (min-width: 1024px) {
+    .card-review {
+        width: auto;
+    }
     .featured-cards {
         overflow-x: unset;
     }
@@ -433,6 +427,7 @@ DESKTOP CSS
     .booking-module {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-08);
     }
     .review-cards-frame {
         display: grid;
