@@ -20,6 +20,7 @@ export default function BookingPage() {
                 <div className="booking-module wrapper">
                     <div>
                         <h3>Our location</h3>
+                            
                     </div>  
                     <div>
                         <h3>Book your table from here!</h3>

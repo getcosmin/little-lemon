@@ -66,6 +66,7 @@ body {
     margin: 0;
 }
 .wrapper {
+    overflow: hidden;
     margin: 0 var(--spacing-02);
 }
 h1 {
@@ -180,6 +181,13 @@ a:hover {
     width: 100%;
     text-align: center;
 }
+.icon-small {
+    height: var(--spacing-03);
+    width: var(--spacing-03);
+}
+header {
+    width: 100%;
+}
 
 /* -------------------- 
 NAVIGATION CSS
@@ -191,6 +199,7 @@ NAVIGATION CSS
     justify-content: space-between;
 }
 .navigation-menu  {
+    display: none;
     gap: 3.2rem;
 }
 .navigation-brand {
@@ -224,9 +233,12 @@ FOOTER CSS
 }
 .footer-navigation {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--spacing-08);
 }
-
+.social-media {
+    margin-block: var(--spacing-04);
+}
 
 /* -------------------- 
 review CSS
@@ -238,7 +250,11 @@ review CSS
     flex-wrap: wrap;
     align-items: center;
 }
+.review-header {
+    margin-block: var(--spacing-06);
+}
 .card-review {
+    width: 100%;
     background-color: var(--color-primary-000);
     padding: var(--spacing-02);
     border-radius: var(--radius-small);
@@ -295,8 +311,15 @@ HERO CSS
     display: flex;
 }
 .hero-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     text-align: center;
     width: 100%;
+}
+.focus-img {
+    width: 100%;
+    height: auto;
 }
 
 /* -------------------- 
@@ -316,10 +339,13 @@ FEATURED CSS
     justify-content: space-between;
 }
 .featured-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    overflow-x: scroll;
+    display: flex;
     gap: var(--spacing-04);
     margin-block: 0 var(--spacing-08);
+}
+.featured-cards > .card {
+    flex: 0 0 min(80vw, 292px);
 }
 .card {
     border: 1px solid var(--color-primary-200);
@@ -329,7 +355,7 @@ FEATURED CSS
     padding: var(--spacing-02);
 }
 .card-image {
-    height: 256px;
+    height: auto;
     width: 100%;
 }
 .card-header {
@@ -341,6 +367,20 @@ FEATURED CSS
 .card-price {
     font-size: var(--text-normal);
 }
+
+/* -------------------- 
+DISPLAY CSS
+-------------------- */
+
+.display-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.display-body {
+    text-align: center;
+}
+
 
 /* -------------------- 
 Booking FORM CSS
@@ -361,6 +401,35 @@ DESKTOP CSS
 -------------------- */
 
 @media (min-width: 1024px) {
+    .featured-cards {
+        overflow-x: unset;
+    }
+    .display-body {
+        text-align: left;
+    }
+    .display-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .review-header {
+        margin-block: var(--spacing-04);
+    }
+    .hero-body {
+        justify-content: left;
+    }
+    .navigation-menu {
+        display: flex;
+    }
+    .card-image {
+        height: 256px;
+        width: 100%;
+    }
+    .featured-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-04);
+        margin-block: 0 var(--spacing-08);
+    }
     .booking-module {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

@@ -8,15 +8,18 @@ export default function Footer() {
                         <li><a href="#facebook" role='button'>Facebook</a></li>
                         <li><a href="#instagram" role='button'>Instagram</a></li>
                         <li><a href="#pinterest" role='button'>Pinterest</a></li>
-                        <li><a href="#tiktok" role='button'>TikTok</a></li>
                     </ul>
                 </div>
                 <div className="footer-navigation">
                 <div>
                         <h3>Contact</h3>
                         <ul className="footer-nav list-none">
-                            <li>New York</li>
-                            <li><a href='mailto:office@littlelemon.com'>office@littlelemon.com</a></li>
+                            <li>
+                                New York
+                            </li>
+                            <li>
+                                <a href='mailto:office@littlelemon.com'>office@littlelemon.com</a>
+                            </li>
                             <li>0740 000 000</li>
                         </ul>
                     </div>

@@ -46,7 +46,7 @@ export default function Booking() {
                         <label for="guests">Number of guests</label>
                         <input type="number" placeholder="1" min="1" max="10" id="guests"/>
                     </div>
-                    <button type="Submit">Submit</button>
+                    <button className='button-primary button-text' type="Submit">Submit</button>
                 </form>
         </>
     )
